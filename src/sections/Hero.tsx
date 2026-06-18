@@ -4,7 +4,7 @@ import Magnetic from '../components/Magnetic'
 import { PROFILE } from '../data/content'
 import { scrollToId } from '../lib/useLenis'
 
-// Three.js is heavy — load it as a separate chunk after first paint.
+// Three.js is heavy, so load it as a separate chunk after first paint.
 const HeroBackground = lazy(() => import('../components/HeroBackground'))
 
 export default function Hero() {

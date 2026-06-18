@@ -121,7 +121,7 @@ export default function CaseStudyPanel({ item, onClose }: Props) {
               (item.detail.diagrams.some((d) => d.description) ? (
                 /* combined figure + explanation walkthrough */
                 <div className="mt-8">
-                  <p className="eyebrow mb-5">Highlights — click any figure to enlarge</p>
+                  <p className="eyebrow mb-5">Highlights · click any figure to enlarge</p>
                   <div className="space-y-9">
                     {item.detail.diagrams.map((d, i) => (
                       <div key={d.src}>
@@ -158,7 +158,7 @@ export default function CaseStudyPanel({ item, onClose }: Props) {
               ) : (
                 /* compact clickable thumbnail gallery */
                 <div className="mt-9">
-                  <p className="eyebrow mb-4">Diagrams — click to enlarge</p>
+                  <p className="eyebrow mb-4">Diagrams · click to enlarge</p>
                   <div className="grid gap-3 sm:grid-cols-3">
                     {item.detail.diagrams.map((d) => (
                       <button

@@ -9,7 +9,7 @@ export default function Footer() {
           Artem<span className="text-brass">.</span>Potlog
         </div>
         <p className="max-w-sm text-xs leading-relaxed text-bone-faint">
-          Energy &amp; O&amp;G executive — capital allocation, M&amp;A and
+          Energy &amp; O&amp;G executive: capital allocation, M&amp;A and
           petroleum economics, augmented with AI/ML.
         </p>
         <div className="flex items-center gap-6">

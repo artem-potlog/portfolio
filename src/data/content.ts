@@ -23,7 +23,7 @@ export const PROFILE = {
   kicker: 'Energy & O&G · Strategy · M&A · AI',
   roleLine: 'Energy executive leading AI transformation in oil & gas.',
   heroSub:
-    'Capital allocation, M&A and petroleum economics — augmented with machine learning that earns its place in the decision.',
+    'Capital allocation, M&A and petroleum economics, augmented with machine learning that earns its place in the decision.',
   location: 'UAE based · EU citizen',
 }
 
@@ -54,12 +54,12 @@ export const CHAPTERS: Chapter[] = [
 ]
 
 /* ------------------------------------------------------------------ */
-/*  01 — Thesis / positioning                                          */
+/*  01 - Thesis / positioning                                          */
 /* ------------------------------------------------------------------ */
 export const THESIS = {
   eyebrow: 'The thesis',
   headline: 'I lead AI transformation from the business side of energy.',
-  body: 'Twelve years in petroleum economics, capital allocation and cross-border M&A — now paired with hands-on machine learning. I don\u2019t sell models. I bring judgment about where AI actually moves NPV in oil, gas and the wider energy transition, and the credibility to drive it through engineers, geoscientists and an investment committee.',
+  body: 'Twelve years in petroleum economics, capital allocation and cross-border M&A, now paired with hands-on machine learning. I don\u2019t sell models. I bring judgment about where AI actually moves NPV in oil, gas and the wider energy transition, and the credibility to drive it through engineers, geoscientists and an investment committee.',
   pillars: [
     {
       title: 'Domain first',
@@ -71,13 +71,13 @@ export const THESIS = {
     },
     {
       title: 'AI that earns its place',
-      text: 'Selective, decision-grade ML and agentic systems — deployed where they change a real call.',
+      text: 'Selective, decision-grade ML and agentic systems, deployed where they change a real call.',
     },
   ],
 }
 
 /* ------------------------------------------------------------------ */
-/*  02 — Impact metrics                                                */
+/*  02 - Impact metrics                                                */
 /* ------------------------------------------------------------------ */
 export const METRICS: Metric[] = [
   { value: 12, suffix: '+', label: 'Years across strategy, economics & operations' },
@@ -89,7 +89,7 @@ export const METRICS: Metric[] = [
 ]
 
 /* ------------------------------------------------------------------ */
-/*  03 — Work                                                          */
+/*  03 - Work                                                          */
 /* ------------------------------------------------------------------ */
 export const PROJECT_GROUPS: ProjectGroup[] = [
   {
@@ -101,7 +101,7 @@ export const PROJECT_GROUPS: ProjectGroup[] = [
         id: 'xrg',
         title: 'AI Workflow Simulations',
         blurb:
-          'Agentic AI use-cases for a large international O&G operator — each stress-tested against adversarial scenarios across screening, trading, operations and risk.',
+          'Agentic AI use-cases for a large international O&G operator, each stress-tested against adversarial scenarios across screening, trading, operations and risk.',
         tags: ['Agentic AI', 'O&G operations', 'Scenario design'],
         status: 'live',
         url: DEPLOY_URLS.xrg,
@@ -116,7 +116,7 @@ export const PROJECT_GROUPS: ProjectGroup[] = [
           ],
           highlights: [
             'Mapped nine decision-grade workflows where agents add value: counterparty screening, market reads, document handling, operations and risk.',
-            'For each, designed an adversarial scenario set — what breaks, what to guard against — so leadership sees the controls, not just the demo.',
+            'For each, designed an adversarial scenario set (what breaks, what to guard against) so leadership sees the controls, not just the demo.',
             'Translated each use-case into business value, time saved and a deployment / risk posture.',
           ],
         },
@@ -125,21 +125,21 @@ export const PROJECT_GROUPS: ProjectGroup[] = [
         id: 'rag',
         title: 'Reserves-Report RAG',
         blurb:
-          'A system that lets you talk to dense PRMS reserve reports and get exact, cited numbers — hybrid retrieval with an agentic, self-verifying answer layer. Built for a Tier-1 O&G consultancy in the CIS.',
+          'A system that lets you talk to dense PRMS reserve reports and get exact, cited numbers, using hybrid retrieval with an agentic, self-verifying answer layer. Built for a Tier-1 O&G consultancy in the CIS.',
         tags: ['RAG', 'Agentic tools', 'Anti-hallucination'],
         status: 'case',
         image: '/previews/rag/rag-architecture.png',
         detail: {
           context:
-            'Reserve-assessment reports are dense PDFs full of tables. This system answers natural-language questions (RU/EN) about a major listed gas producer\u2019s reserves with exact figures and source citations — not summaries.',
+            'Reserve-assessment reports are dense PDFs full of tables. This system answers natural-language questions (RU/EN) about a major listed gas producer\u2019s reserves with exact figures and source citations, not summaries.',
           facts: [
             { label: 'Client', value: 'Tier-1 O&G consultancy (CIS)' },
             { label: 'Corpus', value: '10 reports · 54k+ reserve records' },
             { label: 'My role', value: 'Concept, architecture, evaluation design' },
           ],
           highlights: [
-            'Four retrieval channels in parallel — dense vectors, BM25 keywords, a SQL store of parsed table cells, and a knowledge graph — fused with reciprocal-rank fusion and a re-ranker.',
-            'Tables are parsed into a real database at ingestion, so numbers come from exact queries instead of the LLM reading cells — the key anti-hallucination decision.',
+            'Four retrieval channels in parallel (dense vectors, BM25 keywords, a SQL store of parsed table cells, and a knowledge graph), fused with reciprocal-rank fusion and a re-ranker.',
+            'Tables are parsed into a real database at ingestion, so numbers come from exact queries instead of the LLM reading cells. That is the key anti-hallucination decision.',
             'A ReAct agent calls 7 tools (lookup, SQL, graph, calculate\u2026), then an answer verifier checks every number in the response against the database.',
             'Self-hostable LLM (Qwen-72B) so client data never leaves their infrastructure.',
           ],
@@ -171,7 +171,7 @@ export const PROJECT_GROUPS: ProjectGroup[] = [
         id: 'treedraft',
         title: 'TreeDraft',
         blurb:
-          'A fast, clean, web-based decision-tree builder — Decision / Chance / EMV — built after free tools moved behind paywalls.',
+          'A fast, clean, web-based decision-tree builder (Decision / Chance / EMV) built after free tools moved behind paywalls.',
         tags: ['Decision trees', 'EMV', 'Web app'],
         status: 'live',
         url: 'https://treedraft.onrender.com/',
@@ -188,7 +188,7 @@ export const PROJECT_GROUPS: ProjectGroup[] = [
         id: 'wellwellwell',
         title: 'wellwellwell.finance',
         blurb:
-          'An O&G corporate-finance drill — valuation, NAV, deferred tax, M&A modeling — with LLM-generated questions to keep skills sharp.',
+          'An O&G corporate-finance drill (valuation, NAV, deferred tax, M&A modeling) with LLM-generated questions to keep skills sharp.',
         tags: ['O&G finance', 'Education', 'LLM'],
         status: 'live',
         url: 'https://wellwellwell-finance.onrender.com/',
@@ -243,7 +243,7 @@ export const PROJECT_GROUPS: ProjectGroup[] = [
         image: '/previews/facies/facies-scenarios.png',
         detail: {
           context:
-            'A full workflow that predicts depositional facies from well logs and produces scenario realizations to condition 3D geomodels — because facies condition geomodels, geomodels condition volumes, and volumes condition economics.',
+            'A full workflow that predicts depositional facies from well logs and produces scenario realizations to condition 3D geomodels, because facies condition geomodels, geomodels condition volumes, and volumes condition economics.',
           facts: [
             { label: 'Affiliation', value: 'Heriot-Watt University' },
             { label: 'Data', value: 'Equinor Volve · Hugin Fm.' },
@@ -262,27 +262,27 @@ export const PROJECT_GROUPS: ProjectGroup[] = [
           diagrams: [
             {
               src: '/previews/facies/facies-feature-engineering.png',
-              caption: 'Feature engineering — multi-scale context',
+              caption: 'Feature engineering: multi-scale context',
               description:
-                'Geologists read sequences, not single readings — so I engineered multi-scale vertical context for every log: bed (~1.4 m), sand-body (~7 m) and formation (~23 m) windows, with the sizes chosen from measured bed thickness and vertical variogram ranges rather than arbitrary smoothing. This multi-scale GR context became the single most important feature family in the model — a concrete example of encoding O&G domain knowledge directly into ML features instead of leaving the model to find it alone.',
+                'Geologists read sequences, not single readings, so I engineered multi-scale vertical context for every log: bed (~1.4 m), sand-body (~7 m) and formation (~23 m) windows, with the sizes chosen from measured bed thickness and vertical variogram ranges rather than arbitrary smoothing. This multi-scale GR context became the single most important feature family in the model: a concrete example of encoding O&G domain knowledge directly into ML features instead of leaving the model to find it alone.',
             },
             {
               src: '/previews/facies/facies-pipeline-result.png',
-              caption: 'Blind-well result — 15/9-F-4 (~70%)',
+              caption: 'Blind-well result: 15/9-F-4 (~70%)',
               description:
-                'Inputs (rank-normalized GR and VSH) on the left; the ensemble\u2019s predicted facies proportions, per-depth uncertainty, and true-vs-predicted columns on the right. On this fully blind well — never seen during training under leave-one-well-out — the workflow reaches ~70% facies accuracy (and ~0.96 pay-vs-seal, ~0.99 reservoir recall pooled across wells). That comes from soft-voting across 12 model views plus the robust, geoscience-informed feature set, not from tuning on the test well.',
+                'Inputs (rank-normalized GR and VSH) on the left; the ensemble\u2019s predicted facies proportions, per-depth uncertainty, and true-vs-predicted columns on the right. On this fully blind well (never seen during training under leave-one-well-out) the workflow reaches ~70% facies accuracy (and ~0.96 pay-vs-seal, ~0.99 reservoir recall pooled across wells). That comes from soft-voting across 12 model views plus the robust, geoscience-informed feature set, not from tuning on the test well.',
             },
             {
               src: '/previews/facies/facies-scenarios.png',
-              caption: 'Probabilistic alternatives — P1 / P2 / P3',
+              caption: 'Probabilistic alternatives: P1 / P2 / P3',
               description:
-                'Instead of a single deterministic facies log, the model emits ranked alternative realizations: P1 (most probable), then P2 and P3 (progressively more divergent). This gives downstream teams genuine alternative depositional architectures to feed into geostatistical models — and, in turn, into economic and volumetric scenarios. Uncertainty is carried all the way through to the value decision rather than collapsed to one answer.',
+                'Instead of a single deterministic facies log, the model emits ranked alternative realizations: P1 (most probable), then P2 and P3 (progressively more divergent). This gives downstream teams genuine alternative depositional architectures to feed into geostatistical models and, in turn, into economic and volumetric scenarios. Uncertainty is carried all the way through to the value decision rather than collapsed to one answer.',
             },
             {
               src: '/previews/facies/facies-discrimination.png',
               caption: 'Discrimination experts on confused pairs',
               description:
-                'Some facies pairs (e.g. Tidal Bar vs Mouthbar) stay confusable even for a strong ensemble. I added pair-aware \u201Cdiscrimination experts\u201D that find the most-confused pairs and re-weight the ensemble views that best separate each specific pair — lifting accuracy exactly where the base model struggles, without disturbing everything else.',
+                'Some facies pairs (e.g. Tidal Bar vs Mouthbar) stay confusable even for a strong ensemble. I added pair-aware \u201Cdiscrimination experts\u201D that find the most-confused pairs and re-weight the ensemble views that best separate each specific pair, lifting accuracy exactly where the base model struggles, without disturbing everything else.',
             },
           ],
         },
@@ -303,7 +303,7 @@ export const PROJECT_GROUPS: ProjectGroup[] = [
         status: 'case',
         detail: {
           context:
-            'A supermajor\u2019s Western-Desert (Egypt) onshore portfolio with current production — 15 PSCs, 55 fields across 22 licences. Bought on the buy-side in coordination with a regional partner.',
+            'A supermajor\u2019s Western-Desert (Egypt) onshore portfolio with current production: 15 PSCs, 55 fields across 22 licences. Bought on the buy-side in coordination with a regional partner.',
           facts: [
             { label: 'Type', value: 'Farm-in / Asset deal' },
             { label: 'Indicative value', value: '~$600\u2013750M' },
@@ -333,7 +333,7 @@ export const PROJECT_GROUPS: ProjectGroup[] = [
           ],
           highlights: [
             'Reviewed the seller\u2019s independent expert model; ran the management-presentation Q&A and contractual-terms analysis (PSCs and Iraqi service contracts).',
-            'Valued operational synergies with existing in-country assets, including a gas-processing tie-in — modeled and presented.',
+            'Valued operational synergies with existing in-country assets, including a gas-processing tie-in, modeled and presented.',
             'Ran preliminary corporate DD: liquidity, corporate loans, convertibles and bonds.',
           ],
         },
@@ -342,7 +342,7 @@ export const PROJECT_GROUPS: ProjectGroup[] = [
         id: 'mna-newcountry',
         title: 'New-Country Entry & JV',
         blurb:
-          'Entry into a new jurisdiction with several JVs and service companies — three early-development assets, ~$2B program.',
+          'Entry into a new jurisdiction with several JVs and service companies: three early-development assets, ~$2B program.',
         tags: ['JV creation', '~$2B CAPEX', 'End-to-end'],
         status: 'case',
         detail: {
@@ -364,12 +364,12 @@ export const PROJECT_GROUPS: ProjectGroup[] = [
         id: 'mna-jv-cfo',
         title: 'JV Reshaping (as CFO)',
         blurb:
-          'As CFO / interim CEO, connected two back-to-back transactions and a tax unlock into a new JV — preserving asset upside through the shareholder transition.',
+          'As CFO / interim CEO, connected two back-to-back transactions and a tax unlock into a new JV, preserving asset upside through the shareholder transition.',
         tags: ['Corporate deal', 'CFO seat', 'Restructuring'],
         status: 'case',
         detail: {
           context:
-            'A $500M-scale exploration JV: the partner exited, the stake was on-sold to a major Russian oil company, and a new JV was stood up — all while keeping the asset investable.',
+            'A $500M-scale exploration JV: the partner exited, the stake was on-sold to a major Russian oil company, and a new JV was stood up, all while keeping the asset investable.',
           facts: [
             { label: 'Type', value: 'Corporate acquisition / JV' },
             { label: 'Scale', value: '$500M JV · 50 FTE' },
@@ -393,7 +393,7 @@ export const PROJECT_GROUPS: ProjectGroup[] = [
         id: 'turnaround',
         title: 'Asset Turnaround',
         blurb:
-          'Took a $500M-scale asset from \u201Ctechnically feasible but uneconomic\u201D to Board-approved investment — +70% NPV.',
+          'Took a $500M-scale asset from \u201Ctechnically feasible but uneconomic\u201D to Board-approved investment (+70% NPV).',
         tags: ['Value creation', 'Fiscal design', '+70% NPV'],
         status: 'case',
         detail: {
@@ -405,7 +405,7 @@ export const PROJECT_GROUPS: ProjectGroup[] = [
             { label: 'My role', value: 'CFO (interim CEO)' },
           ],
           highlights: [
-            'Re-based the asset onto a special profit-based tax regime — a multi-billion-RUB full-cycle EMV uplift.',
+            'Re-based the asset onto a special profit-based tax regime, a multi-billion-RUB full-cycle EMV uplift.',
             'Cleared the investment committee: project taken off \u201Csmart-pause\u201D and advanced from Appraise to Select with an approved work program.',
             'Combined technical redesign, fiscal unlock and adjacent-partner synergies into one Board-grade case.',
           ],
@@ -420,7 +420,7 @@ export const PROJECT_GROUPS: ProjectGroup[] = [
         status: 'case',
         detail: {
           context:
-            'During the shareholder transition the asset had to keep running and become self-sufficient — migrating off the departing partner\u2019s systems without losing the execution window.',
+            'During the shareholder transition the asset had to keep running and become self-sufficient, migrating off the departing partner\u2019s systems without losing the execution window.',
           facts: [
             { label: 'Org', value: '50 FTE · multi-site' },
             { label: 'Focus', value: 'Systems, cost, continuity' },
@@ -429,7 +429,7 @@ export const PROJECT_GROUPS: ProjectGroup[] = [
           highlights: [
             'Migrated reporting from SAP ERP to 1C and IT off the partner\u2019s infrastructure; brought statutory & tax accounting in-house from a Big-Four provider.',
             'Stacked recurring cost-outs: in-house accounting, office optimization and remote-work infrastructure (tens of millions of RUB / year combined).',
-            'Ran the first-ever asset inventory, transfer-pricing documentation, and FEED contracting ahead of schedule — while retaining the team and protecting the winter drilling window.',
+            'Ran the first-ever asset inventory, transfer-pricing documentation, and FEED contracting ahead of schedule, while retaining the team and protecting the winter drilling window.',
           ],
         },
       },
@@ -438,11 +438,11 @@ export const PROJECT_GROUPS: ProjectGroup[] = [
 ]
 
 /* ------------------------------------------------------------------ */
-/*  04 — Experience                                                    */
+/*  04 - Experience                                                    */
 /* ------------------------------------------------------------------ */
 export const EXPERIENCE: ExperienceEntry[] = [
   {
-    period: '2025 — Present',
+    period: '2025 - Present',
     org: 'Heriot-Watt University',
     role: 'Research affiliate · Geo Data Science',
     location: 'Edinburgh / remote',
@@ -452,7 +452,7 @@ export const EXPERIENCE: ExperienceEntry[] = [
     ],
   },
   {
-    period: '2024 — Present',
+    period: '2024 - Present',
     org: 'CIS Family Office ($500M)',
     role: 'Advisor (part-time)',
     location: 'CIS / remote',
@@ -462,7 +462,7 @@ export const EXPERIENCE: ExperienceEntry[] = [
     ],
   },
   {
-    period: '2022 — 2024',
+    period: '2022 - 2024',
     org: 'Gazprom Neft',
     role: 'Program Manager · MENA & Caspian Strategy',
     location: 'Dubai, UAE',
@@ -473,7 +473,7 @@ export const EXPERIENCE: ExperienceEntry[] = [
     ],
   },
   {
-    period: '2020 — 2022',
+    period: '2020 - 2022',
     org: 'Repsol',
     role: 'CFO (interim CEO) · $500M Exploration JV',
     location: 'Moscow, Russia',
@@ -484,7 +484,7 @@ export const EXPERIENCE: ExperienceEntry[] = [
     ],
   },
   {
-    period: '2017 — 2020',
+    period: '2017 - 2020',
     org: 'Gazprom Neft',
     role: 'Manager · Middle East & Caspian (Strategy & Investment)',
     location: 'Dubai, UAE',
@@ -494,7 +494,7 @@ export const EXPERIENCE: ExperienceEntry[] = [
     ],
   },
   {
-    period: '2013 — 2017',
+    period: '2013 - 2017',
     org: 'Gazprom Neft',
     role: 'Chief Economist / Investment Manager · Iraq',
     location: 'Erbil, Iraq',
@@ -504,7 +504,7 @@ export const EXPERIENCE: ExperienceEntry[] = [
     ],
   },
   {
-    period: '2011 — 2013',
+    period: '2011 - 2013',
     org: 'Gazprom Neft',
     role: 'Senior Specialist · Business Development',
     location: 'St. Petersburg, Russia',
@@ -514,7 +514,7 @@ export const EXPERIENCE: ExperienceEntry[] = [
     ],
   },
   {
-    period: '2010 — 2011',
+    period: '2010 - 2011',
     org: 'PwC',
     role: 'Audit Associate',
     location: '',
@@ -523,27 +523,27 @@ export const EXPERIENCE: ExperienceEntry[] = [
 ]
 
 /* ------------------------------------------------------------------ */
-/*  05 — About                                                         */
+/*  05 - About                                                         */
 /* ------------------------------------------------------------------ */
 export const ABOUT = {
   eyebrow: 'About',
   headline: 'Between the boardroom and the model.',
   paragraphs: [
-    'Twelve-plus years across strategy, corporate development and operations in the Caspian, MENA and CIS — concept selection and value optimization for multi-billion-dollar field development plans, cross-border M&A and JV structuring, and value-creation in tight oil.',
+    'Twelve-plus years across strategy, corporate development and operations in the Caspian, MENA and CIS: concept selection and value optimization for multi-billion-dollar field development plans, cross-border M&A and JV structuring, and value-creation in tight oil.',
     'A CFO and interim-CEO tenure taught me what survives contact with reality: governance, cash, and a team that stays. An MSc in Petroleum Engineering and applied ML research taught me where models genuinely help.',
-    'I work best sitting between geology, reservoir engineering and valuation — turning subsurface uncertainty into decisions an investment committee can stand behind.',
+    'I work best sitting between geology, reservoir engineering and valuation, turning subsurface uncertainty into decisions an investment committee can stand behind.',
   ],
   education: [
     {
       school: 'Heriot-Watt University',
       detail: 'MSc, Petroleum Engineering (Merit) · Data Science research',
-      year: '2024 — 2026',
+      year: '2024 - 2026',
     },
     {
       school: 'St. Petersburg State University of Economics',
-      detail: 'Double Diploma — Finance & Law',
-      year: '2007 — 2012',
+      detail: 'Double Diploma, Finance & Law',
+      year: '2007 - 2012',
     },
   ],
-  languages: ['English — full professional', 'Russian — native', 'German — working'],
+  languages: ['English: full professional', 'Russian: native', 'German: working'],
 }

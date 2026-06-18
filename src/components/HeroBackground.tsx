@@ -62,7 +62,7 @@ const vertexShader = /* glsl */ `
     vec3 pos = position;
     float ph = aSeed * 6.2831853;
 
-    // flowing undulation — reads as subsurface strata / log curves
+    // flowing undulation, reads as subsurface strata / log curves
     pos.y += sin(pos.x * 0.45 + uTime * 0.5 + ph) * 0.18;
     pos.x += sin(pos.y * 0.30 + uTime * 0.35 + ph) * 0.12;
     pos.z += cos(pos.x * 0.30 + uTime * 0.40 + ph) * 0.25;
