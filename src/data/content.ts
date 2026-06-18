@@ -9,8 +9,8 @@ import type {
 /*  Deployed app URLs (filled in once the apps are live on Render)      */
 /* ------------------------------------------------------------------ */
 export const DEPLOY_URLS = {
-  // Updated after the XRG simulation is deployed to Render.
-  xrg: 'https://xrg-ai-usecases.onrender.com/',
+  // AI workflow simulations (client anonymized as "Company ABC").
+  xrg: 'https://abc-ai-usecases.onrender.com/',
   // Updated after AccountingPrep is deployed to Render.
   accountingPrep: 'https://accounting-prep.onrender.com/',
 }
