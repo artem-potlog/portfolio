@@ -98,7 +98,20 @@ export default function CaseStudyPanel({ item, onClose }: Props) {
                   <div className="font-mono text-[10px] uppercase tracking-[0.16em] text-bone-faint">
                     {f.label}
                   </div>
-                  <div className="mt-1.5 text-sm text-bone">{f.value}</div>
+                  <div className="mt-1.5 text-sm text-bone">
+                    {f.href ? (
+                      <a
+                        href={f.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="link-underline transition-colors hover:text-brass"
+                      >
+                        {f.value}
+                      </a>
+                    ) : (
+                      f.value
+                    )}
+                  </div>
                 </div>
               ))}
             </div>

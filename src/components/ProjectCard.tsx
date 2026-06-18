@@ -140,10 +140,19 @@ export default function ProjectCard({ item, onOpen }: Props) {
           ))}
         </div>
 
-        <div className="relative mt-6 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.16em] text-brass">
-          {actionLabel}
-          <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
-        </div>
+        {hasDetail ? (
+          <div className="relative mt-6 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.16em] text-brass">
+            {actionLabel}
+            <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+          </div>
+        ) : (
+          <div className="relative mt-6">
+            <span className="inline-flex items-center gap-2 rounded-full bg-brass px-5 py-2.5 font-mono text-[11px] uppercase tracking-[0.16em] text-ink transition-transform group-hover:scale-[1.03]">
+              {actionLabel}
+              <ArrowUpRight className="h-3.5 w-3.5" />
+            </span>
+          </div>
+        )}
       </div>
     </div>
   )

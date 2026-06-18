@@ -50,7 +50,20 @@ export default function Experience() {
                 </div>
 
                 <div className="sm:pl-8">
-                  <h3 className="font-display text-xl text-bone">{e.org}</h3>
+                  <h3 className="font-display text-xl text-bone">
+                    {e.href ? (
+                      <a
+                        href={e.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="link-underline transition-colors hover:text-brass"
+                      >
+                        {e.org}
+                      </a>
+                    ) : (
+                      e.org
+                    )}
+                  </h3>
                   <p className="mt-1 text-sm text-brass">{e.role}</p>
                   {e.location && (
                     <p className="mt-0.5 font-mono text-[11px] uppercase tracking-[0.1em] text-bone-faint">

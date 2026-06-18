@@ -11,7 +11,7 @@ export interface CaseStudy {
   /** Short context line shown at top of the panel */
   context: string
   /** Anonymized scope facts (scale, role, etc.) */
-  facts: { label: string; value: string }[]
+  facts: { label: string; value: string; href?: string }[]
   /** Bullet highlights of what was done / delivered */
   highlights?: string[]
   /** Technology stack chips */
@@ -59,6 +59,8 @@ export interface ExperienceEntry {
   role: string
   location?: string
   points: string[]
+  /** External link for the org (e.g. research group page) */
+  href?: string
 }
 
 export interface Chapter {

@@ -103,7 +103,7 @@ const fragmentShader = /* glsl */ `
     vec3 col = mix(brassDeep, brass, vColorMix);
     col = mix(col, teal, smoothstep(0.55, 1.0, vColorMix) * 0.85);
 
-    gl_FragColor = vec4(col, glow * vAlpha);
+    gl_FragColor = vec4(col, glow * vAlpha * 0.6);
   }
 `
 
@@ -173,7 +173,7 @@ function ParticleField({ count }: { count: number }) {
       uTime: { value: 0 },
       uMorph: { value: 0 },
       uMouse: { value: new THREE.Vector2(0, 0) },
-      uSize: { value: 26 },
+      uSize: { value: 21 },
       uPixelRatio: { value: Math.min(window.devicePixelRatio, 2) },
     }),
     [],
@@ -205,7 +205,7 @@ function ParticleField({ count }: { count: number }) {
       u.uMouse.value.set(mouse.current.x * 0.35, mouse.current.y * 0.35)
     }
     if (lineMatRef.current) {
-      lineMatRef.current.opacity = morphSmooth * 0.22
+      lineMatRef.current.opacity = morphSmooth * 0.16
     }
     if (groupRef.current) {
       groupRef.current.rotation.y = mouse.current.x * 0.12

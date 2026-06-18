@@ -55,15 +55,31 @@ export default function About() {
                   Education
                 </h4>
                 <ul className="mt-4 space-y-4">
-                  {ABOUT.education.map((ed) => (
-                    <li key={ed.school}>
-                      <div className="text-sm text-bone">{ed.school}</div>
-                      <div className="mt-0.5 text-sm text-bone-dim">{ed.detail}</div>
-                      <div className="mt-0.5 font-mono text-[11px] tracking-[0.1em] text-bone-faint">
-                        {ed.year}
-                      </div>
-                    </li>
-                  ))}
+                  {ABOUT.education.map((ed) => {
+                    const href = 'href' in ed ? (ed.href as string) : undefined
+                    return (
+                      <li key={ed.school}>
+                        <div className="text-sm text-bone">
+                          {href ? (
+                            <a
+                              href={href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="link-underline transition-colors hover:text-brass"
+                            >
+                              {ed.school}
+                            </a>
+                          ) : (
+                            ed.school
+                          )}
+                        </div>
+                        <div className="mt-0.5 text-sm text-bone-dim">{ed.detail}</div>
+                        <div className="mt-0.5 font-mono text-[11px] tracking-[0.1em] text-bone-faint">
+                          {ed.year}
+                        </div>
+                      </li>
+                    )
+                  })}
                 </ul>
               </div>
             </Reveal>

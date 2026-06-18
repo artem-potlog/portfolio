@@ -59,11 +59,11 @@ export const CHAPTERS: Chapter[] = [
 export const THESIS = {
   eyebrow: 'The thesis',
   headline: 'I lead AI transformation from the business side of energy.',
-  body: 'Twelve years in petroleum economics, capital allocation and cross-border M&A, now paired with hands-on machine learning. I don\u2019t sell models. I bring judgment about where AI actually moves NPV in oil, gas and the wider energy transition, and the credibility to drive it through engineers, geoscientists and an investment committee.',
+  body: 'Twelve years in petroleum economics, capital allocation and cross-border M&A, plus a lot of recent hands-on machine learning. I don\u2019t sell models. I know where AI actually earns its keep in oil, gas and energy, and I can carry it through the engineers, geoscientists and investment committees who have to sign off.',
   pillars: [
     {
       title: 'Domain first',
-      text: 'FDP economics, fiscal design, reserves-to-value. I speak the language of the asset, not just the model.',
+      text: 'FDP economics, fiscal design, turning reserves into value. I understand the asset, not just the model.',
     },
     {
       title: 'Capital discipline',
@@ -91,7 +91,7 @@ export const METRICS: Metric[] = [
 /* ------------------------------------------------------------------ */
 /*  03 - Work                                                          */
 /* ------------------------------------------------------------------ */
-export const PROJECT_GROUPS: ProjectGroup[] = [
+const GROUPS_RAW: ProjectGroup[] = [
   {
     id: 'industrial-ai',
     label: 'Industrial AI',
@@ -245,7 +245,11 @@ export const PROJECT_GROUPS: ProjectGroup[] = [
           context:
             'A full workflow that predicts depositional facies from well logs and produces scenario realizations to condition 3D geomodels, because facies condition geomodels, geomodels condition volumes, and volumes condition economics.',
           facts: [
-            { label: 'Affiliation', value: 'Heriot-Watt University' },
+            {
+              label: 'Affiliation',
+              value: 'Heriot-Watt GeoDataScience',
+              href: 'https://geodatascience.hw.ac.uk/',
+            },
             { label: 'Data', value: 'Equinor Volve · Hugin Fm.' },
             { label: 'Output', value: 'IAMG 2026 (Montreal) paper' },
           ],
@@ -310,10 +314,11 @@ export const PROJECT_GROUPS: ProjectGroup[] = [
             { label: 'My role', value: 'Lead commercial / economic modeling' },
           ],
           highlights: [
-            'Built a detailed per-asset operating & fiscal model from the PSC terms, Shell\u2019s historicals and the technical team\u2019s reserves / CAPEX.',
+            'Built a detailed per-asset operating & fiscal model from the PSC terms, the seller\u2019s historicals and the technical team\u2019s reserves / CAPEX.',
             'Coordinated daily valuation exchange with the partner\u2019s evaluators and the seller\u2019s advisor; ran the Q&A and data room.',
             'Prepared screening-committee, project and investment-committee materials; presented to Head of M&A and Head of International Business.',
           ],
+          techStack: ['DCF', 'NAV', 'PSC', 'Tax', 'Monte Carlo', 'GR', 'Term Sheet', 'Negotiations', 'Strategy'],
         },
       },
       {
@@ -336,6 +341,7 @@ export const PROJECT_GROUPS: ProjectGroup[] = [
             'Valued operational synergies with existing in-country assets, including a gas-processing tie-in, modeled and presented.',
             'Ran preliminary corporate DD: liquidity, corporate loans, convertibles and bonds.',
           ],
+          techStack: ['DCF', 'NAV', 'EMV', 'Tax', 'SPA', 'Monte Carlo', 'Negotiations', 'Strategy'],
         },
       },
       {
@@ -358,6 +364,7 @@ export const PROJECT_GROUPS: ProjectGroup[] = [
             'Ran financial & commercial DD on partners; built per-asset operating models from the technical evaluation.',
             'Co-led host-government negotiations and proposed contract amendments; prepared and presented IC materials.',
           ],
+          techStack: ['DCF', 'EMV', 'Decision Trees', 'PSC', 'Tax', 'GR', 'SHA', 'Term Sheet', 'MoU', 'HoA', 'Negotiations', 'Strategy'],
         },
       },
       {
@@ -380,6 +387,32 @@ export const PROJECT_GROUPS: ProjectGroup[] = [
             'Led financial-DD coordination, the accounting balance-sheet clean-up for the deal, and authored the operational chapters of the new SHA; reviewed the SPA.',
             'Ran the JV\u2019s day-to-day (field, HR, budgeting, financing) in parallel with the live transaction.',
           ],
+          techStack: ['NAV', 'DCF', 'SHA', 'SPA', 'Tax', 'Negotiations', 'Strategy'],
+        },
+      },
+      {
+        id: 'mna-more',
+        title: 'Further Deals & Rounds',
+        blurb:
+          'A run of additional buy-side mandates across the Caspian, MENA and North Africa: bilateral A&D, licensing rounds and a corporate JV.',
+        tags: ['A&D', 'Licensing rounds', 'Buy-side'],
+        status: 'case',
+        detail: {
+          context:
+            'Beyond the headline transactions, a series of additional buy-side evaluations and negotiations across the region (all anonymized).',
+          facts: [
+            { label: 'Scope', value: 'Five more mandates' },
+            { label: 'Range', value: '~$50M-500M each' },
+            { label: 'My role', value: 'Economics, DD, negotiation support' },
+          ],
+          highlights: [
+            'Early-development Algerian gas field (~$300M, ~22 Tcf P50): buy-side asset evaluation.',
+            'Corporate JV with a state nuclear corporation: SHA drafting and partner alignment.',
+            'Iraq and UAE licensing rounds: bid economics built from internal technical re-estimates.',
+            'Kurdistan bilateral A&D across several operators: farm-in screening and valuation.',
+            'Oman bilateral A&D with national operators: asset screening and valuation.',
+          ],
+          techStack: ['DCF', 'NAV', 'EMV', 'PSC', 'Tax', 'Term Sheet', 'MoU', 'Negotiations', 'Strategy'],
         },
       },
     ],
@@ -437,6 +470,16 @@ export const PROJECT_GROUPS: ProjectGroup[] = [
   },
 ]
 
+// Display order: Industrial AI and ML research lead, then the rest.
+export const PROJECT_GROUPS: ProjectGroup[] = [
+  'industrial-ai',
+  'ml-research',
+  'productivity',
+  'ai-tools',
+  'mna',
+  'cfo-gm',
+].map((id) => GROUPS_RAW.find((g) => g.id === id)!)
+
 /* ------------------------------------------------------------------ */
 /*  04 - Experience                                                    */
 /* ------------------------------------------------------------------ */
@@ -446,6 +489,7 @@ export const EXPERIENCE: ExperienceEntry[] = [
     org: 'Heriot-Watt University',
     role: 'Research affiliate · Geo Data Science',
     location: 'Edinburgh / remote',
+    href: 'https://geodatascience.hw.ac.uk/',
     points: [
       'ML for petrophysics and geostatistical modeling.',
       'Paper at IAMG 2026 (Montreal): rock-type classification with uncertainty quantification.',
@@ -527,10 +571,10 @@ export const EXPERIENCE: ExperienceEntry[] = [
 /* ------------------------------------------------------------------ */
 export const ABOUT = {
   eyebrow: 'About',
-  headline: 'Between the boardroom and the model.',
+  headline: 'I sit between the boardroom and the model.',
   paragraphs: [
     'Twelve-plus years across strategy, corporate development and operations in the Caspian, MENA and CIS: concept selection and value optimization for multi-billion-dollar field development plans, cross-border M&A and JV structuring, and value-creation in tight oil.',
-    'A CFO and interim-CEO tenure taught me what survives contact with reality: governance, cash, and a team that stays. An MSc in Petroleum Engineering and applied ML research taught me where models genuinely help.',
+    'A stint as CFO, then interim CEO, taught me what really survives contact with reality: governance, cash, and a team that sticks around. An MSc in Petroleum Engineering and hands-on ML research taught me where models genuinely help, and where they just add noise.',
     'I work best sitting between geology, reservoir engineering and valuation, turning subsurface uncertainty into decisions an investment committee can stand behind.',
   ],
   education: [
@@ -538,6 +582,7 @@ export const ABOUT = {
       school: 'Heriot-Watt University',
       detail: 'MSc, Petroleum Engineering (Merit) · Data Science research',
       year: '2024 - 2026',
+      href: 'https://geodatascience.hw.ac.uk/',
     },
     {
       school: 'St. Petersburg State University of Economics',
