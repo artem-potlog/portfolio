@@ -105,20 +105,6 @@ const GROUPS_RAW: ProjectGroup[] = [
         status: 'live',
         url: DEPLOY_URLS.xrg,
         preview: '/previews/xrg.mp4',
-        detail: {
-          context:
-            'An interactive catalogue of AI agent use-cases for an international oil & gas operator, built to show not just the happy path but how each workflow behaves under adversarial conditions.',
-          facts: [
-            { label: 'Client', value: 'Large international O&G operator' },
-            { label: 'Scope', value: '9 end-to-end agent use-cases' },
-            { label: 'My role', value: 'Use-case framing, scenario & value design' },
-          ],
-          highlights: [
-            'Mapped nine decision-grade workflows where agents add value: counterparty screening, market reads, document handling, operations and risk.',
-            'For each, designed an adversarial scenario set (what breaks, what to guard against) so leadership sees the controls, not just the demo.',
-            'Translated each use-case into business value, time saved and a deployment / risk posture.',
-          ],
-        },
       },
       {
         id: 'rag',
