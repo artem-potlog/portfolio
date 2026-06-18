@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import type { ProjectItem } from '../data/types'
-import { ArrowUpRight, Close, Expand } from './icons'
+import { ArrowUpRight, Close, Download, Expand } from './icons'
 import PreviewVideo from './PreviewVideo'
 
 interface Props {
@@ -97,7 +97,8 @@ export default function CaseStudyPanel({ item, onClose }: Props) {
               ))}
             </div>
 
-            <ul className="mt-8 space-y-4">
+            <p className="eyebrow mb-4 mt-8">Highlights</p>
+            <ul className="space-y-4">
               {item.detail.highlights.map((h, i) => (
                 <li key={i} className="flex gap-3 text-sm leading-relaxed text-bone-dim">
                   <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brass" />
@@ -105,6 +106,22 @@ export default function CaseStudyPanel({ item, onClose }: Props) {
                 </li>
               ))}
             </ul>
+
+            {item.detail.techStack && (
+              <div className="mt-8">
+                <p className="eyebrow mb-4">Tech stack</p>
+                <div className="flex flex-wrap gap-2">
+                  {item.detail.techStack.map((t) => (
+                    <span
+                      key={t}
+                      className="rounded-full border border-line px-3 py-1 font-mono text-[10px] uppercase tracking-[0.1em] text-bone-dim"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
 
             {item.detail.diagrams && (
               <div className="mt-9">
@@ -137,16 +154,34 @@ export default function CaseStudyPanel({ item, onClose }: Props) {
               </div>
             )}
 
-            {item.url && (
-              <a
-                href={item.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-9 inline-flex items-center gap-2 rounded-full bg-brass px-6 py-3 font-mono text-xs uppercase tracking-[0.16em] text-ink transition-transform hover:scale-[1.03]"
-              >
-                {item.status === 'github' ? 'View repository' : 'Open live'}
-                <ArrowUpRight className="h-4 w-4" />
-              </a>
+            {(item.pdf || item.url) && (
+              <div className="mt-9 flex flex-wrap gap-3">
+                {item.pdf && (
+                  <a
+                    href={item.pdf}
+                    download
+                    className="inline-flex items-center gap-2 rounded-full bg-brass px-6 py-3 font-mono text-xs uppercase tracking-[0.16em] text-ink transition-transform hover:scale-[1.03]"
+                  >
+                    <Download className="h-4 w-4" />
+                    Download paper
+                  </a>
+                )}
+                {item.url && (
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`inline-flex items-center gap-2 rounded-full px-6 py-3 font-mono text-xs uppercase tracking-[0.16em] transition-all ${
+                      item.pdf
+                        ? 'border border-line-strong text-bone hover:border-brass hover:text-brass'
+                        : 'bg-brass text-ink hover:scale-[1.03]'
+                    }`}
+                  >
+                    {item.status === 'github' ? 'View repository' : 'Open live'}
+                    <ArrowUpRight className="h-4 w-4" />
+                  </a>
+                )}
+              </div>
             )}
           </motion.div>
 

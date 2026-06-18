@@ -12,6 +12,8 @@ export interface CaseStudy {
   facts: { label: string; value: string }[]
   /** Bullet highlights of what was done / delivered */
   highlights: string[]
+  /** Technology stack chips */
+  techStack?: string[]
   /** Clickable diagrams shown in the panel (open in a lightbox) */
   diagrams?: Diagram[]
 }
@@ -29,6 +31,8 @@ export interface ProjectItem {
   preview?: string
   /** Static visual for the card when there is no video preview */
   image?: string
+  /** Downloadable paper / document (path under public) */
+  pdf?: string
   /** Long-form anonymized detail, opens in a panel */
   detail?: CaseStudy
 }
