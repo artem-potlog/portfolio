@@ -1,5 +1,10 @@
 export type ProjectStatus = 'live' | 'github' | 'case'
 
+export interface Diagram {
+  src: string
+  caption: string
+}
+
 export interface CaseStudy {
   /** Short context line shown at top of the panel */
   context: string
@@ -7,6 +12,8 @@ export interface CaseStudy {
   facts: { label: string; value: string }[]
   /** Bullet highlights of what was done / delivered */
   highlights: string[]
+  /** Clickable diagrams shown in the panel (open in a lightbox) */
+  diagrams?: Diagram[]
 }
 
 export interface ProjectItem {
@@ -20,6 +27,8 @@ export interface ProjectItem {
   url?: string
   /** Looping preview clip of the live site (path under /previews) */
   preview?: string
+  /** Static visual for the card when there is no video preview */
+  image?: string
   /** Long-form anonymized detail, opens in a panel */
   detail?: CaseStudy
 }

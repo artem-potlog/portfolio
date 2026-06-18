@@ -64,10 +64,22 @@ export default function ProjectCard({ item, onOpen }: Props) {
       onClick={primaryAction}
       className="group relative flex h-full cursor-pointer flex-col overflow-hidden rounded-2xl border border-line bg-ink-soft transition-all duration-500 hover:border-brass/30 hover:bg-panel"
     >
-      {/* preview clip of the live site */}
-      {item.preview && (
+      {/* preview clip of the live site, or a static diagram visual */}
+      {(item.preview || item.image) && (
         <div className="relative border-b border-line">
-          <PreviewVideo src={item.preview} label={item.title} />
+          {item.preview ? (
+            <PreviewVideo src={item.preview} label={item.title} />
+          ) : (
+            <div className="relative aspect-[16/10] w-full overflow-hidden bg-ink">
+              <img
+                src={item.image}
+                alt={`${item.title} diagram`}
+                loading="lazy"
+                className="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/55 via-transparent to-transparent" />
+            </div>
+          )}
           {item.url && (
             <a
               href={item.url}
@@ -95,7 +107,7 @@ export default function ProjectCard({ item, onOpen }: Props) {
 
         <div className="relative flex items-start justify-between gap-4">
           <StatusBadge status={item.status} />
-          {item.url && !item.preview && (
+          {item.url && !item.preview && !item.image && (
             <a
               href={item.url}
               target="_blank"

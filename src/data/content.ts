@@ -128,6 +128,7 @@ export const PROJECT_GROUPS: ProjectGroup[] = [
           'A system that lets you talk to dense PRMS reserve reports and get exact, cited numbers — hybrid retrieval with an agentic, self-verifying answer layer. Built for a Tier-1 O&G consultancy in the CIS.',
         tags: ['RAG', 'Agentic tools', 'Anti-hallucination'],
         status: 'case',
+        image: '/previews/rag/rag-architecture.png',
         detail: {
           context:
             'Reserve-assessment reports are dense PDFs full of tables. This system answers natural-language questions (RU/EN) about a major listed gas producer\u2019s reserves with exact figures and source citations — not summaries.',
@@ -141,6 +142,11 @@ export const PROJECT_GROUPS: ProjectGroup[] = [
             'Tables are parsed into a real database at ingestion, so numbers come from exact queries instead of the LLM reading cells — the key anti-hallucination decision.',
             'A ReAct agent calls 7 tools (lookup, SQL, graph, calculate\u2026), then an answer verifier checks every number in the response against the database.',
             'Self-hostable LLM (Qwen-72B) so client data never leaves their infrastructure.',
+          ],
+          diagrams: [
+            { src: '/previews/rag/rag-architecture.png', caption: 'System architecture' },
+            { src: '/previews/rag/rag-ingestion.png', caption: 'Ingestion pipeline' },
+            { src: '/previews/rag/rag-query.png', caption: 'Query-time workflow' },
           ],
         },
       },
