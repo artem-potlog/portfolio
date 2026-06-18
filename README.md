@@ -1,73 +1,48 @@
-# React + TypeScript + Vite
+# Artem Potlog — Personal Site
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A cinematic, single-scroll personal site positioning Artem Potlog as an energy /
+O&G finance and general-management executive who leads AI/ML transformation.
 
-Currently, two official plugins are available:
+Built with **Vite + React + TypeScript + Tailwind v4**, with a **Three.js**
+particle hero, **Framer Motion** animations and **Lenis** smooth scrolling.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Develop
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev      # http://127.0.0.1:5173
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Build
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run build    # type-checks then builds to ./dist
+npm run preview  # serve the production build locally
 ```
+
+## Structure
+
+```
+src/
+├── components/   # HeroBackground (WebGL), nav, cards, panels, icons, primitives
+├── sections/     # Hero, Thesis, Impact, Work, Experience, About, Contact
+├── data/         # typed content (content.ts) + types.ts
+├── lib/          # Lenis smooth scroll, active-section observer
+└── index.css     # design tokens (petroleum / brass / oil-teal palette)
+```
+
+All copy and project data live in [`src/data/content.ts`](src/data/content.ts).
+When the XRG simulation and the IFRS trainer are deployed, set their URLs in the
+`DEPLOY_URLS` object at the top of that file.
+
+## Deploy (Render)
+
+This repo includes [`render.yaml`](render.yaml). Push to GitHub, then in Render:
+**New + → Blueprint →** select this repo. It builds with `npm ci && npm run build`
+and publishes `./dist` as a static site.
+
+## Accessibility & performance
+
+- Respects `prefers-reduced-motion` (smooth scroll, reveals, counters and the
+  WebGL field all degrade gracefully).
+- Three.js is lazy-loaded as a separate chunk, so initial JS is ~124 kB gzip.
