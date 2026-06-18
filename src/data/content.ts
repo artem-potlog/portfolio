@@ -240,6 +240,7 @@ export const PROJECT_GROUPS: ProjectGroup[] = [
         status: 'github',
         url: 'https://github.com/artem-potlog/well-log-facies-prediction',
         pdf: '/papers/well-log-facies-prediction.pdf',
+        image: '/previews/facies/facies-scenarios.png',
         detail: {
           context:
             'A full workflow that predicts depositional facies from well logs and produces scenario realizations to condition 3D geomodels — because facies condition geomodels, geomodels condition volumes, and volumes condition economics.',
@@ -252,7 +253,7 @@ export const PROJECT_GROUPS: ProjectGroup[] = [
             'Geoscience-informed by design: facies tied to a published Kieft et al. (2011) depositional model, not unsupervised clusters; multi-scale feature windows justified by measured bed thickness and vertical variogram ranges.',
             'Leakage-safe leave-one-well-out evaluation with ~117 engineered features from 12 wireline curves and per-well rank normalization; normalization chosen nested per fold and validated with a McNemar paired test (p ~ 1e-5).',
             '12-model soft-voting ensemble with per-sample uncertainty (prediction entropy, inter-model agreement, top-1 to top-2 margin).',
-            'P1 / P2 / P3 scenario realizations as alternative depositional architectures for stochastic geomodel conditioning, plus pair-aware "discrimination experts" that re-weight where facies stay confused.',
+            'P1 / P2 / P3 scenario realizations as alternative depositional architectures — usable for alternative geostatistical and economic modeling rather than a single deterministic answer; plus pair-aware "discrimination experts" that re-weight the ensemble where facies stay confused.',
             'Honest blind-well performance: ~0.96 pay-vs-seal accuracy, ~0.99 reservoir recall, ~0.98 within-one-tier accuracy on pooled held-out wells.',
           ],
           techStack: [
@@ -264,6 +265,24 @@ export const PROJECT_GROUPS: ProjectGroup[] = [
             'pandas / NumPy',
             'Matplotlib',
             'joblib',
+          ],
+          diagrams: [
+            {
+              src: '/previews/facies/facies-feature-engineering.png',
+              caption: 'Multi-scale GR context — the top feature family',
+            },
+            {
+              src: '/previews/facies/facies-pipeline-result.png',
+              caption: 'Blind-well inputs vs outputs — 15/9-F-4 (~70%)',
+            },
+            {
+              src: '/previews/facies/facies-scenarios.png',
+              caption: 'P1 / P2 / P3 conditioning scenarios',
+            },
+            {
+              src: '/previews/facies/facies-discrimination.png',
+              caption: 'Discrimination experts on confused pairs',
+            },
           ],
         },
       },
