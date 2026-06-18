@@ -63,7 +63,7 @@ export const THESIS = {
   pillars: [
     {
       title: 'Domain first',
-      text: 'Field development economics, fiscal design, turning reserves into value. I understand the asset, not just the model.',
+      text: 'Petroleum engineering, Field Development economics, fiscal design, M&A deals. I understand the asset, not just the model.',
     },
     {
       title: 'Capital discipline',
@@ -84,7 +84,6 @@ export const METRICS: Metric[] = [
   { value: 3, prefix: '$', suffix: 'B+', label: 'Capital programs shaped' },
   { value: 500, prefix: '$', suffix: 'M+', label: 'Cross-border M&A executed' },
   { value: 70, prefix: '+', suffix: '%', label: 'NPV uplift on a flagship asset' },
-  { value: 200, prefix: '+', suffix: ' bps', label: 'IRR improvement via deal structuring' },
   { value: 20, suffix: '+', label: 'Board / IC-grade investment cases' },
 ]
 
