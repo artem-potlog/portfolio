@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import type { ProjectItem } from '../data/types'
 import { ArrowUpRight, Close } from './icons'
+import PreviewVideo from './PreviewVideo'
 
 interface Props {
   item: ProjectItem | null
@@ -59,6 +60,12 @@ export default function CaseStudyPanel({ item, onClose }: Props) {
             >
               <Close className="h-4 w-4" />
             </button>
+
+            {item.preview && (
+              <div className="group mb-7 overflow-hidden rounded-xl border border-line">
+                <PreviewVideo src={item.preview} label={item.title} />
+              </div>
+            )}
 
             <p className="eyebrow">Case study</p>
             <h3 className="mt-3 font-display text-3xl font-light leading-tight text-bone">

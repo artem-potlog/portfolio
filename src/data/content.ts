@@ -105,6 +105,7 @@ export const PROJECT_GROUPS: ProjectGroup[] = [
         tags: ['Agentic AI', 'O&G operations', 'Scenario design'],
         status: 'live',
         url: DEPLOY_URLS.xrg,
+        preview: '/previews/xrg.mp4',
         detail: {
           context:
             'An interactive catalogue of AI agent use-cases for an international oil & gas operator, built to show not just the happy path but how each workflow behaves under adversarial conditions.',
@@ -158,6 +159,7 @@ export const PROJECT_GROUPS: ProjectGroup[] = [
         tags: ['Dashboard', 'NPV / IRR', 'Sensitivity'],
         status: 'live',
         url: 'https://xyz-store-b0gk.onrender.com/',
+        preview: '/previews/xyz-dashboard.mp4',
       },
       {
         id: 'treedraft',
@@ -167,6 +169,7 @@ export const PROJECT_GROUPS: ProjectGroup[] = [
         tags: ['Decision trees', 'EMV', 'Web app'],
         status: 'live',
         url: 'https://treedraft.onrender.com/',
+        preview: '/previews/treedraft.mp4',
       },
     ],
   },
@@ -183,6 +186,7 @@ export const PROJECT_GROUPS: ProjectGroup[] = [
         tags: ['O&G finance', 'Education', 'LLM'],
         status: 'live',
         url: 'https://wellwellwell-finance.onrender.com/',
+        preview: '/previews/wellwellwell.mp4',
       },
       {
         id: 'accounting-prep',
@@ -192,6 +196,7 @@ export const PROJECT_GROUPS: ProjectGroup[] = [
         tags: ['IFRS', 'FP&A', 'AI grading'],
         status: 'live',
         url: DEPLOY_URLS.accountingPrep,
+        preview: '/previews/accounting-prep.mp4',
       },
       {
         id: 'aurum-astra',
@@ -201,6 +206,7 @@ export const PROJECT_GROUPS: ProjectGroup[] = [
         tags: ['Generative', 'Ephemeris engine', 'Playful'],
         status: 'live',
         url: 'https://aurum-astra.onrender.com/',
+        preview: '/previews/aurum-astra.mp4',
       },
       {
         id: 'resume-tailor',
@@ -210,6 +216,7 @@ export const PROJECT_GROUPS: ProjectGroup[] = [
         tags: ['ATS', 'NLP', 'Productivity'],
         status: 'live',
         url: 'https://resume-tailor-ycyp.onrender.com/',
+        preview: '/previews/resume-tailor.mp4',
       },
     ],
   },

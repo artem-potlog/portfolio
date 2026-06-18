@@ -18,6 +18,8 @@ export interface ProjectItem {
   status: ProjectStatus
   /** External link (live demo / GitHub) when available */
   url?: string
+  /** Looping preview clip of the live site (path under /previews) */
+  preview?: string
   /** Long-form anonymized detail, opens in a panel */
   detail?: CaseStudy
 }
