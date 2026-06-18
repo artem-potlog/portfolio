@@ -37,11 +37,16 @@ export function useLenis() {
   }, [])
 }
 
+/** Returns the active Lenis instance, if any. */
+export function getLenis(): Lenis | undefined {
+  return (window as unknown as { __lenis?: Lenis }).__lenis
+}
+
 /** Smoothly scroll to a section id, using Lenis when available. */
 export function scrollToId(id: string) {
   const el = document.getElementById(id)
   if (!el) return
-  const lenis = (window as unknown as { __lenis?: Lenis }).__lenis
+  const lenis = getLenis()
   if (lenis) {
     lenis.scrollTo(el, { offset: 0, duration: 1.2 })
   } else {

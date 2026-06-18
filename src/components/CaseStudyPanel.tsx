@@ -3,6 +3,7 @@ import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import type { ProjectItem } from '../data/types'
 import { ArrowUpRight, Close, Download, Expand } from './icons'
 import PreviewVideo from './PreviewVideo'
+import { getLenis } from '../lib/useLenis'
 
 interface Props {
   item: ProjectItem | null
@@ -23,10 +24,14 @@ export default function CaseStudyPanel({ item, onClose }: Props) {
       if (zoomRef.current) setZoom(null)
       else onClose()
     }
+    // Pause Lenis so the mouse wheel scrolls the modal, not the page behind it.
+    const lenis = getLenis()
+    lenis?.stop()
     document.body.style.overflow = 'hidden'
     window.addEventListener('keydown', onKey)
     return () => {
       document.body.style.overflow = ''
+      lenis?.start()
       window.removeEventListener('keydown', onKey)
     }
   }, [item, onClose])
@@ -58,6 +63,7 @@ export default function CaseStudyPanel({ item, onClose }: Props) {
             role="dialog"
             aria-modal="true"
             aria-label={item.title}
+            data-lenis-prevent
             initial={reduced ? { opacity: 0 } : { opacity: 0, y: 40, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={reduced ? { opacity: 0 } : { opacity: 0, y: 40, scale: 0.98 }}
