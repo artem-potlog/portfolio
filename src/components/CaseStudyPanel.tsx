@@ -104,9 +104,10 @@ export default function CaseStudyPanel({ item, onClose }: Props) {
                         href={f.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="link-underline transition-colors hover:text-brass"
+                        className="inline-flex items-center gap-1 text-brass underline decoration-brass/40 underline-offset-4 transition-colors hover:decoration-brass"
                       >
                         {f.value}
+                        <ArrowUpRight className="h-3 w-3" />
                       </a>
                     ) : (
                       f.value

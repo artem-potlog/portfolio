@@ -2,6 +2,7 @@ import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion
 import { useRef } from 'react'
 import Section from '../components/Section'
 import Reveal from '../components/Reveal'
+import { ArrowUpRight } from '../components/icons'
 import { EXPERIENCE } from '../data/content'
 
 export default function Experience() {
@@ -56,9 +57,10 @@ export default function Experience() {
                         href={e.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="link-underline transition-colors hover:text-brass"
+                        className="inline-flex items-center gap-1.5 text-brass underline decoration-brass/40 underline-offset-4 transition-colors hover:decoration-brass"
                       >
                         {e.org}
+                        <ArrowUpRight className="h-4 w-4" />
                       </a>
                     ) : (
                       e.org

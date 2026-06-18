@@ -1,5 +1,6 @@
 import Section from '../components/Section'
 import Reveal from '../components/Reveal'
+import { ArrowUpRight } from '../components/icons'
 import { ABOUT } from '../data/content'
 
 export default function About() {
@@ -34,11 +35,13 @@ export default function About() {
             </div>
           </Reveal>
 
-          <Reveal delay={0.05}>
-            <h2 className="font-display text-[clamp(1.8rem,3.6vw,3rem)] font-light leading-[1.1] tracking-tight text-bone">
-              {ABOUT.headline}
-            </h2>
-          </Reveal>
+          {ABOUT.headline && (
+            <Reveal delay={0.05}>
+              <h2 className="font-display text-[clamp(1.8rem,3.6vw,3rem)] font-light leading-[1.1] tracking-tight text-bone">
+                {ABOUT.headline}
+              </h2>
+            </Reveal>
+          )}
 
           <div className="mt-6 space-y-4">
             {ABOUT.paragraphs.map((p, i) => (
@@ -65,9 +68,10 @@ export default function About() {
                               href={href}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="link-underline transition-colors hover:text-brass"
+                              className="inline-flex items-center gap-1 text-brass underline decoration-brass/40 underline-offset-4 transition-colors hover:decoration-brass"
                             >
                               {ed.school}
+                              <ArrowUpRight className="h-3.5 w-3.5" />
                             </a>
                           ) : (
                             ed.school

@@ -59,11 +59,11 @@ export const CHAPTERS: Chapter[] = [
 export const THESIS = {
   eyebrow: 'The thesis',
   headline: 'I lead AI transformation from the business side of energy.',
-  body: 'Twelve years in petroleum economics, capital allocation and cross-border M&A, plus a lot of recent hands-on machine learning. I don\u2019t sell models. I know where AI actually earns its keep in oil, gas and energy, and I can carry it through the engineers, geoscientists and investment committees who have to sign off.',
+  body: 'Twelve years in petroleum economics, capital allocation and cross-border M&A, plus a lot of recent hands-on machine learning. I know where AI actually earns its keep in oil, gas and energy, and I can carry it through the engineers, geoscientists and investment committees who have to sign off.',
   pillars: [
     {
       title: 'Domain first',
-      text: 'FDP economics, fiscal design, turning reserves into value. I understand the asset, not just the model.',
+      text: 'Field development economics, fiscal design, turning reserves into value. I understand the asset, not just the model.',
     },
     {
       title: 'Capital discipline',
@@ -429,18 +429,27 @@ const GROUPS_RAW: ProjectGroup[] = [
           'Took a $500M-scale asset from \u201Ctechnically feasible but uneconomic\u201D to Board-approved investment (+70% NPV).',
         tags: ['Value creation', 'Fiscal design', '+70% NPV'],
         status: 'case',
+        image: '/previews/turnaround/fishbone-well.png',
         detail: {
           context:
-            'A field with complex drilling, a heterogeneous reservoir and negative economics. The unlock came from the right development concept plus a special tax regime and partner synergies.',
+            'A tight, heterogeneous reservoir with complex drilling and negative standalone economics. The turnaround stacked three independent levers: fiscal, surface CAPEX and subsurface technology.',
           facts: [
             { label: 'Asset', value: '300 MMbbl recoverable' },
             { label: 'Result', value: 'Board-approved · +70% NPV' },
             { label: 'My role', value: 'CFO (interim CEO)' },
           ],
           highlights: [
-            'Re-based the asset onto a special profit-based tax regime, a multi-billion-RUB full-cycle EMV uplift.',
-            'Cleared the investment committee: project taken off \u201Csmart-pause\u201D and advanced from Appraise to Select with an approved work program.',
-            'Combined technical redesign, fiscal unlock and adjacent-partner synergies into one Board-grade case.',
+            'Fiscal: re-based the asset onto a special profit-based tax regime through government-relations work, a multi-billion-RUB full-cycle EMV uplift.',
+            'Surface CAPEX: negotiated shared-infrastructure synergies with an adjacent field, cutting standalone facilities spend.',
+            'Subsurface: cracked the tight reservoir with a multilateral \u201Cfishbone\u201D completion (9.4+ km total length, ~120 t/d initial rate, roughly 6x prior wells; among the most complex wells in Russian drilling practice), designed into the FDP.',
+            'Cleared the investment committee: taken off \u201Csmart-pause\u201D and advanced from Appraise to Select with an approved work program.',
+          ],
+          techStack: ['Tax', 'GR', 'EMV', 'FDP', 'Negotiations', 'Strategy'],
+          diagrams: [
+            {
+              src: '/previews/turnaround/fishbone-well.png',
+              caption: 'Multilateral \u201Cfishbone\u201D well through a thin reservoir',
+            },
           ],
         },
       },
@@ -456,13 +465,13 @@ const GROUPS_RAW: ProjectGroup[] = [
             'During the shareholder transition the asset had to keep running and become self-sufficient, migrating off the departing partner\u2019s systems without losing the execution window.',
           facts: [
             { label: 'Org', value: '50 FTE · multi-site' },
-            { label: 'Focus', value: 'Systems, cost, continuity' },
+            { label: 'Recurring cost-out', value: '~RUB 45M / year' },
             { label: 'My role', value: 'CFO / interim CEO' },
           ],
           highlights: [
-            'Migrated reporting from SAP ERP to 1C and IT off the partner\u2019s infrastructure; brought statutory & tax accounting in-house from a Big-Four provider.',
-            'Stacked recurring cost-outs: in-house accounting, office optimization and remote-work infrastructure (tens of millions of RUB / year combined).',
-            'Ran the first-ever asset inventory, transfer-pricing documentation, and FEED contracting ahead of schedule, while retaining the team and protecting the winter drilling window.',
+            'Migrated reporting from SAP ERP to 1C and IT off the partner\u2019s infrastructure, and brought statutory & tax accounting in-house from a Big-Four provider (~RUB 7.3M/year saved).',
+            'Stacked recurring cost-outs: office optimization (~RUB 18M/year), remote-work infrastructure (~RUB 20M/year) and the SAP-to-1C migration (~EUR 20-50k/year).',
+            'Contracted two FEED lots ahead of schedule for ~RUB 54M of savings (2-2.8% below the starting price), and ran the first-ever asset inventory (~RUB 105M correctly capitalized) while retaining the team and protecting the winter drilling window.',
           ],
         },
       },
@@ -571,10 +580,10 @@ export const EXPERIENCE: ExperienceEntry[] = [
 /* ------------------------------------------------------------------ */
 export const ABOUT = {
   eyebrow: 'About',
-  headline: 'I sit between the boardroom and the model.',
+  headline: '',
   paragraphs: [
     'Twelve-plus years across strategy, corporate development and operations in the Caspian, MENA and CIS: concept selection and value optimization for multi-billion-dollar field development plans, cross-border M&A and JV structuring, and value-creation in tight oil.',
-    'A stint as CFO, then interim CEO, taught me what really survives contact with reality: governance, cash, and a team that sticks around. An MSc in Petroleum Engineering and hands-on ML research taught me where models genuinely help, and where they just add noise.',
+    'An MSc in Petroleum Engineering and hands-on ML research taught me where models genuinely help, and where they just add noise.',
     'I work best sitting between geology, reservoir engineering and valuation, turning subsurface uncertainty into decisions an investment committee can stand behind.',
   ],
   education: [
