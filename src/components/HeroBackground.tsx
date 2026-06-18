@@ -89,6 +89,7 @@ const fragmentShader = /* glsl */ `
   precision mediump float;
   varying float vAlpha;
   varying float vColorMix;
+  uniform float uBrightness;
 
   void main() {
     vec2 c = gl_PointCoord - 0.5;
@@ -103,7 +104,7 @@ const fragmentShader = /* glsl */ `
     vec3 col = mix(brassDeep, brass, vColorMix);
     col = mix(col, teal, smoothstep(0.55, 1.0, vColorMix) * 0.85);
 
-    gl_FragColor = vec4(col, glow * vAlpha * 0.6);
+    gl_FragColor = vec4(col, glow * vAlpha * uBrightness);
   }
 `
 
@@ -168,16 +169,19 @@ function ParticleField({ count }: { count: number }) {
     return g
   }, [edges])
 
-  const uniforms = useMemo(
-    () => ({
+  const uniforms = useMemo(() => {
+    // On small screens the field scales down and particles cluster, so the
+    // additive glow stacks into bright hotspots. Dim + shrink them on mobile.
+    const mobile = window.innerWidth < 640
+    return {
       uTime: { value: 0 },
       uMorph: { value: 0 },
       uMouse: { value: new THREE.Vector2(0, 0) },
-      uSize: { value: 21 },
+      uSize: { value: mobile ? 14 : 21 },
       uPixelRatio: { value: Math.min(window.devicePixelRatio, 2) },
-    }),
-    [],
-  )
+      uBrightness: { value: mobile ? 0.38 : 0.6 },
+    }
+  }, [])
 
   // pointer tracking relative to viewport centre
   useEffect(() => {

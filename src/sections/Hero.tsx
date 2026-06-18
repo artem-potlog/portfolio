@@ -52,6 +52,8 @@ export default function Hero() {
       {/* depth gradients + legibility scrim behind the text */}
       <div className="pointer-events-none absolute inset-0 vignette" />
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-ink via-ink/55 to-transparent" />
+      {/* extra darkening on small screens, where the field clusters brighter */}
+      <div className="pointer-events-none absolute inset-0 bg-ink/35 sm:hidden" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-ink to-transparent" />
 
       {/* content */}
