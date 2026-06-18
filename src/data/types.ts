@@ -3,6 +3,8 @@ export type ProjectStatus = 'live' | 'github' | 'case'
 export interface Diagram {
   src: string
   caption: string
+  /** Expanded explanation; when present, the figure renders with its text */
+  description?: string
 }
 
 export interface CaseStudy {
@@ -11,7 +13,7 @@ export interface CaseStudy {
   /** Anonymized scope facts (scale, role, etc.) */
   facts: { label: string; value: string }[]
   /** Bullet highlights of what was done / delivered */
-  highlights: string[]
+  highlights?: string[]
   /** Technology stack chips */
   techStack?: string[]
   /** Clickable diagrams shown in the panel (open in a lightbox) */

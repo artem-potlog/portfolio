@@ -97,15 +97,89 @@ export default function CaseStudyPanel({ item, onClose }: Props) {
               ))}
             </div>
 
-            <p className="eyebrow mb-4 mt-8">Highlights</p>
-            <ul className="space-y-4">
-              {item.detail.highlights.map((h, i) => (
-                <li key={i} className="flex gap-3 text-sm leading-relaxed text-bone-dim">
-                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brass" />
-                  <span>{h}</span>
-                </li>
+            {item.detail.highlights && item.detail.highlights.length > 0 && (
+              <>
+                <p className="eyebrow mb-4 mt-8">Highlights</p>
+                <ul className="space-y-4">
+                  {item.detail.highlights.map((h, i) => (
+                    <li key={i} className="flex gap-3 text-sm leading-relaxed text-bone-dim">
+                      <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brass" />
+                      <span>{h}</span>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            )}
+
+            {item.detail.diagrams &&
+              (item.detail.diagrams.some((d) => d.description) ? (
+                /* combined figure + explanation walkthrough */
+                <div className="mt-8">
+                  <p className="eyebrow mb-5">Highlights — click any figure to enlarge</p>
+                  <div className="space-y-9">
+                    {item.detail.diagrams.map((d, i) => (
+                      <div key={d.src}>
+                        <button
+                          onClick={() => setZoom(d.src)}
+                          className="group/dia block w-full"
+                          aria-label={`Enlarge: ${d.caption}`}
+                        >
+                          <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl border border-line bg-ink">
+                            <img
+                              src={d.src}
+                              alt={d.caption}
+                              loading="lazy"
+                              className="h-full w-full object-contain transition-transform duration-500 group-hover/dia:scale-[1.02]"
+                            />
+                            <div className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full border border-line-strong bg-ink/70 text-bone opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover/dia:opacity-100">
+                              <Expand className="h-4 w-4" />
+                            </div>
+                          </div>
+                        </button>
+                        <div className="mt-3 flex items-baseline gap-3">
+                          <span className="font-mono text-xs text-brass">{`0${i + 1}`}</span>
+                          <h4 className="font-display text-lg text-bone">{d.caption}</h4>
+                        </div>
+                        {d.description && (
+                          <p className="mt-2 text-sm leading-relaxed text-bone-dim">
+                            {d.description}
+                          </p>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                /* compact clickable thumbnail gallery */
+                <div className="mt-9">
+                  <p className="eyebrow mb-4">Diagrams — click to enlarge</p>
+                  <div className="grid gap-3 sm:grid-cols-3">
+                    {item.detail.diagrams.map((d) => (
+                      <button
+                        key={d.src}
+                        onClick={() => setZoom(d.src)}
+                        className="group/dia text-left"
+                        aria-label={`Enlarge: ${d.caption}`}
+                      >
+                        <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-line bg-ink">
+                          <img
+                            src={d.src}
+                            alt={d.caption}
+                            loading="lazy"
+                            className="h-full w-full object-cover object-top transition-transform duration-500 group-hover/dia:scale-105"
+                          />
+                          <div className="absolute inset-0 flex items-center justify-center bg-ink/40 opacity-0 transition-opacity duration-300 group-hover/dia:opacity-100">
+                            <Expand className="h-6 w-6 text-bone" />
+                          </div>
+                        </div>
+                        <span className="mt-2 block font-mono text-[10px] uppercase tracking-[0.14em] text-bone-faint transition-colors group-hover/dia:text-brass">
+                          {d.caption}
+                        </span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
               ))}
-            </ul>
 
             {item.detail.techStack && (
               <div className="mt-8">
@@ -118,37 +192,6 @@ export default function CaseStudyPanel({ item, onClose }: Props) {
                     >
                       {t}
                     </span>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {item.detail.diagrams && (
-              <div className="mt-9">
-                <p className="eyebrow mb-4">Diagrams — click to enlarge</p>
-                <div className="grid gap-3 sm:grid-cols-3">
-                  {item.detail.diagrams.map((d) => (
-                    <button
-                      key={d.src}
-                      onClick={() => setZoom(d.src)}
-                      className="group/dia text-left"
-                      aria-label={`Enlarge: ${d.caption}`}
-                    >
-                      <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-line bg-ink">
-                        <img
-                          src={d.src}
-                          alt={d.caption}
-                          loading="lazy"
-                          className="h-full w-full object-cover object-top transition-transform duration-500 group-hover/dia:scale-105"
-                        />
-                        <div className="absolute inset-0 flex items-center justify-center bg-ink/40 opacity-0 transition-opacity duration-300 group-hover/dia:opacity-100">
-                          <Expand className="h-6 w-6 text-bone" />
-                        </div>
-                      </div>
-                      <span className="mt-2 block font-mono text-[10px] uppercase tracking-[0.14em] text-bone-faint transition-colors group-hover/dia:text-brass">
-                        {d.caption}
-                      </span>
-                    </button>
                   ))}
                 </div>
               </div>

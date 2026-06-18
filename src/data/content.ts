@@ -249,13 +249,6 @@ export const PROJECT_GROUPS: ProjectGroup[] = [
             { label: 'Data', value: 'Equinor Volve · Hugin Fm.' },
             { label: 'Output', value: 'IAMG 2026 (Montreal) paper' },
           ],
-          highlights: [
-            'Geoscience-informed by design: facies tied to a published Kieft et al. (2011) depositional model, not unsupervised clusters; multi-scale feature windows justified by measured bed thickness and vertical variogram ranges.',
-            'Leakage-safe leave-one-well-out evaluation with ~117 engineered features from 12 wireline curves and per-well rank normalization; normalization chosen nested per fold and validated with a McNemar paired test (p ~ 1e-5).',
-            '12-model soft-voting ensemble with per-sample uncertainty (prediction entropy, inter-model agreement, top-1 to top-2 margin).',
-            'P1 / P2 / P3 scenario realizations as alternative depositional architectures — usable for alternative geostatistical and economic modeling rather than a single deterministic answer; plus pair-aware "discrimination experts" that re-weight the ensemble where facies stay confused.',
-            'Honest blind-well performance: ~0.96 pay-vs-seal accuracy, ~0.99 reservoir recall, ~0.98 within-one-tier accuracy on pooled held-out wells.',
-          ],
           techStack: [
             'Python',
             'scikit-learn',
@@ -269,19 +262,27 @@ export const PROJECT_GROUPS: ProjectGroup[] = [
           diagrams: [
             {
               src: '/previews/facies/facies-feature-engineering.png',
-              caption: 'Multi-scale GR context — the top feature family',
+              caption: 'Feature engineering — multi-scale context',
+              description:
+                'Geologists read sequences, not single readings — so I engineered multi-scale vertical context for every log: bed (~1.4 m), sand-body (~7 m) and formation (~23 m) windows, with the sizes chosen from measured bed thickness and vertical variogram ranges rather than arbitrary smoothing. This multi-scale GR context became the single most important feature family in the model — a concrete example of encoding O&G domain knowledge directly into ML features instead of leaving the model to find it alone.',
             },
             {
               src: '/previews/facies/facies-pipeline-result.png',
-              caption: 'Blind-well inputs vs outputs — 15/9-F-4 (~70%)',
+              caption: 'Blind-well result — 15/9-F-4 (~70%)',
+              description:
+                'Inputs (rank-normalized GR and VSH) on the left; the ensemble\u2019s predicted facies proportions, per-depth uncertainty, and true-vs-predicted columns on the right. On this fully blind well — never seen during training under leave-one-well-out — the workflow reaches ~70% facies accuracy (and ~0.96 pay-vs-seal, ~0.99 reservoir recall pooled across wells). That comes from soft-voting across 12 model views plus the robust, geoscience-informed feature set, not from tuning on the test well.',
             },
             {
               src: '/previews/facies/facies-scenarios.png',
-              caption: 'P1 / P2 / P3 conditioning scenarios',
+              caption: 'Probabilistic alternatives — P1 / P2 / P3',
+              description:
+                'Instead of a single deterministic facies log, the model emits ranked alternative realizations: P1 (most probable), then P2 and P3 (progressively more divergent). This gives downstream teams genuine alternative depositional architectures to feed into geostatistical models — and, in turn, into economic and volumetric scenarios. Uncertainty is carried all the way through to the value decision rather than collapsed to one answer.',
             },
             {
               src: '/previews/facies/facies-discrimination.png',
               caption: 'Discrimination experts on confused pairs',
+              description:
+                'Some facies pairs (e.g. Tidal Bar vs Mouthbar) stay confusable even for a strong ensemble. I added pair-aware \u201Cdiscrimination experts\u201D that find the most-confused pairs and re-weight the ensemble views that best separate each specific pair — lifting accuracy exactly where the base model struggles, without disturbing everything else.',
             },
           ],
         },
