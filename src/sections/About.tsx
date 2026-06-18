@@ -18,9 +18,6 @@ export default function About() {
                 className="aspect-[4/5] w-full object-cover grayscale-[0.15] transition-all duration-700 hover:grayscale-0"
               />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/50 via-transparent to-transparent" />
-              <div className="absolute bottom-4 left-4 font-mono text-[11px] uppercase tracking-[0.16em] text-bone/80">
-                UAE · EU citizen
-              </div>
             </div>
           </Reveal>
         </div>
