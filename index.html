@@ -38,6 +38,44 @@
       href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Structured data for search engines -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://artempotlog.com/#person",
+            "name": "Artem Potlog",
+            "url": "https://artempotlog.com/",
+            "image": "https://artempotlog.com/artem.png",
+            "jobTitle": "Energy & O&G Executive · AI Transformation",
+            "description": "Finance and general-management executive in oil & gas and energy, leading AI/ML transformation. Capital allocation, M&A and petroleum economics.",
+            "knowsAbout": [
+              "Oil & Gas",
+              "Petroleum Economics",
+              "Capital Allocation",
+              "Mergers & Acquisitions",
+              "Field Development",
+              "Machine Learning",
+              "AI Transformation"
+            ],
+            "sameAs": [
+              "https://www.linkedin.com/in/artem-potlog/",
+              "https://github.com/artem-potlog"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://artempotlog.com/#website",
+            "url": "https://artempotlog.com/",
+            "name": "Artem Potlog",
+            "publisher": { "@id": "https://artempotlog.com/#person" }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
