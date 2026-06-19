@@ -10,7 +10,9 @@ import type {
 /* ------------------------------------------------------------------ */
 export const DEPLOY_URLS = {
   // AI workflow simulations (client anonymized as "Company ABC").
-  xrg: 'https://abc-ai-usecases.onrender.com/',
+  // Public link points to the LOCKED preview (abc2). Swap to the full version
+  // (abc-ai-usecases.onrender.com) here when you want to show everything.
+  xrg: 'https://abc2-ai-usecases.onrender.com/',
   // Updated after AccountingPrep is deployed to Render.
   accountingPrep: 'https://accounting-prep.onrender.com/',
 }
