@@ -111,12 +111,13 @@ const GROUPS_RAW: ProjectGroup[] = [
       },
       {
         id: 'agency-ai',
-        title: 'Agentic AI for Digital Agencies',
+        title: 'Use-cases of ML and GenAI in O&G for Top-5 digital agency',
         blurb:
           'A collection of agentic AI use-cases developed for five of Russia\u2019s leading digital agencies.',
         tags: ['Agentic AI', 'Digital agencies', 'Use-case design'],
         status: 'live',
         url: DEPLOY_URLS.agencyAi,
+        image: '/previews/agency-ai.png',
       },
       {
         id: 'rag',
