@@ -13,6 +13,7 @@ export const DEPLOY_URLS = {
   // Public link points to the LOCKED preview (abc2). Swap to the full version
   // (abc-ai-usecases.onrender.com) here when you want to show everything.
   xrg: 'https://abc2-ai-usecases.onrender.com/',
+  agencyAi: 'https://oil-gas-ai-rmr2.onrender.com/?lang=en',
   // Updated after AccountingPrep is deployed to Render.
   accountingPrep: 'https://accounting-prep.onrender.com/',
 }
@@ -107,6 +108,15 @@ const GROUPS_RAW: ProjectGroup[] = [
         status: 'live',
         url: DEPLOY_URLS.xrg,
         preview: '/previews/xrg.mp4',
+      },
+      {
+        id: 'agency-ai',
+        title: 'Agentic AI for Digital Agencies',
+        blurb:
+          'A collection of agentic AI use-cases developed for five of Russia\u2019s leading digital agencies.',
+        tags: ['Agentic AI', 'Digital agencies', 'Use-case design'],
+        status: 'live',
+        url: DEPLOY_URLS.agencyAi,
       },
       {
         id: 'rag',
